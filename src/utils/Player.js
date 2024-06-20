@@ -44,6 +44,7 @@ export const initPlayer = async (playNow = false) => {
     const { playList } = music;
     // 当前播放歌曲数据
     const playSongData = music.getPlaySongData;
+
     // 是否为本地歌曲
     const isLocalSong = playSongData?.path ? true : false;
     console.log("当前为本地歌曲");
@@ -89,13 +90,17 @@ export const initPlayer = async (playNow = false) => {
             $message.error("该歌曲暂无音源，跳至下一首");
             changePlayIndex("next", true);
             // console.log(playSongData, "playerSongData");
-            otherMusic();
           }
         }
       }
       // 下一曲
       else {
         if (playIndex !== playList.length - 1) {
+          console.log(playSongData.name, "无法正常获取播放地址。。。。");
+          // otherMusic(playSongData).then((res) => {
+          //   console.log(res);
+          // });
+          // console.log(res, "其他音源......");
           // changePlayIndex();
         } else {
           status.playLoading = false;

@@ -363,6 +363,7 @@ const checkHasPlaying = (isScoll = null) => {
 
 // 播放歌曲
 const playSong = async (data, song, index) => {
+  // alert(1111);
   console.log(data, song, index);
   // 若开启了缓存且正在加载
   if (useMusicCache.value && playLoading.value) {
