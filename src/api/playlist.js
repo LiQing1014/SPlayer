@@ -11,7 +11,7 @@ import axios from "@/utils/request";
 export const getPlayListCatlist = (hq = false) => {
   return axios({
     method: "GET",
-    url: `/playlist/${hq ? "highquality/tags" : "catlist"}`,
+    url: `/playlist/${hq ? "highquality/tags" : "catlist"}`
   });
 };
 
@@ -32,8 +32,8 @@ export const getDscPlaylist = (cat = "全部", limit = 50, offset = 0, hq = fals
       cat,
       limit,
       ...(!hq && { offset }),
-      ...(hq && { before }),
-    },
+      ...(hq && { before })
+    }
   });
 };
 
@@ -45,7 +45,7 @@ export const getTopPlaylist = (detail = true) => {
   const url = detail ? "/toplist/detail" : "/toplist";
   return axios({
     method: "GET",
-    url,
+    url
   });
 };
 
@@ -59,8 +59,8 @@ export const getPlayListDetail = (id) => {
     url: "/playlist/detail",
     params: {
       id,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -78,8 +78,8 @@ export const getAllPlayList = (id, limit = 50, offset = 0) => {
       id,
       limit,
       offset,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -98,8 +98,8 @@ export const getHeartRateList = (id, pid, sid) => {
       id,
       pid,
       sid,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -115,8 +115,8 @@ export const createPlaylist = (name, privacy = false) => {
     params: {
       name,
       privacy,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -130,8 +130,8 @@ export const delPlayList = (id) => {
     url: "/playlist/delete",
     params: {
       id,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -151,8 +151,8 @@ export const playlistUpdate = (id, name, desc = null, tags = null) => {
       name,
       desc,
       tags,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -166,8 +166,8 @@ export const setPlaylistPrivacy = (id) => {
     url: "/playlist/privacy",
     params: {
       id,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -185,8 +185,8 @@ export const addSongToPlayList = (pid, tracks, op = "add") => {
       op,
       pid,
       tracks,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };
 
@@ -203,7 +203,7 @@ export const likePlaylist = (t, id) => {
     params: {
       t,
       id,
-      timestamp: new Date().getTime(),
-    },
+      timestamp: new Date().getTime()
+    }
   });
 };

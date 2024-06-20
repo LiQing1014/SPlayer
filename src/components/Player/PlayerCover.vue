@@ -67,6 +67,7 @@ const { playState } = storeToRefs(status);
   height: auto;
   aspect-ratio: 1 / 1;
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
   .cover-img {
     width: 100%;
     height: 100%;
@@ -75,6 +76,7 @@ const { playState } = storeToRefs(status);
     z-index: 1;
     box-shadow: 0 0 20px 10px rgb(0 0 0 / 10%);
     transition: opacity 0.1s ease-in-out;
+
     :deep(img) {
       width: 100%;
       height: 100%;
@@ -82,6 +84,7 @@ const { playState } = storeToRefs(status);
       transition: opacity 0.3s ease-in-out;
     }
   }
+
   .cover-shadow {
     position: absolute;
     top: 12px;
@@ -90,14 +93,17 @@ const { playState } = storeToRefs(status);
     filter: blur(20px) opacity(0.6);
     transform: scale(0.95);
     z-index: 0;
+
     :deep(img) {
       width: 100%;
       height: 100%;
     }
   }
+
   &.record {
     position: relative;
     width: 55vh;
+
     .pointer {
       position: absolute;
       width: 14vh;
@@ -107,10 +113,12 @@ const { playState } = storeToRefs(status);
       transform-origin: 1.8vh 1.8vh;
       z-index: 2;
       transition: transform 0.3s;
+
       &.play {
         transform: rotate(0);
       }
     }
+
     .cover-img {
       animation: playerCoverRotate 18s linear infinite;
       border-radius: 50%;
@@ -187,6 +195,7 @@ const { playState } = storeToRefs(status);
       display: flex;
       justify-content: center;
       align-items: center;
+
       :deep(img) {
         border: 1vh solid #ffffff40;
         border-radius: 50%;
@@ -194,21 +203,26 @@ const { playState } = storeToRefs(status);
         height: 70%;
         object-fit: cover;
       }
+
       .cover-loading {
         position: absolute;
         height: 100%;
         padding-bottom: 0;
+
         .loading-img {
           top: auto;
         }
       }
     }
+
     .cover-shadow {
       display: none;
     }
   }
+
   &.cover {
     transform: scale(0.9);
+
     &.playing {
       transform: scale(1);
     }
@@ -220,6 +234,7 @@ const { playState } = storeToRefs(status);
         width: 12vh;
         top: -6vh;
       }
+
       .cover-img {
         width: 40vh;
         height: 40vh;

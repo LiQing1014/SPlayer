@@ -3,11 +3,11 @@
   <Transition name="fade" mode="out-in" @after-enter="checkHasPlaying">
     <div v-if="data?.[0]?.id" class="song-list">
       <div v-if="showTitle" class="song-list-header">
-        <n-text class="num" depth="3"> # </n-text>
+        <n-text class="num" depth="3"> #</n-text>
         <n-text :class="['info', { 'has-cover': data[0].cover && showCover }]" depth="3">
           {{ type === "song" ? "歌曲" : "声音" }}
         </n-text>
-        <n-text v-if="data[0].album && showAlbum" class="album hidden" depth="3"> 专辑 </n-text>
+        <n-text v-if="data[0].album && showAlbum" class="album hidden" depth="3"> 专辑</n-text>
         <n-text v-if="data[0].updateTime && type === 'dj'" class="update hidden" depth="3">
           更新日期
         </n-text>
@@ -15,8 +15,8 @@
         <n-text v-if="data[0].playCount && type === 'dj'" class="count hidden" depth="3">
           播放量
         </n-text>
-        <n-text v-if="data[0].duration" class="duration hidden" depth="3"> 时长 </n-text>
-        <n-text v-if="data[0].size" class="size hidden" depth="3"> 大小 </n-text>
+        <n-text v-if="data[0].duration" class="duration hidden" depth="3"> 时长</n-text>
+        <n-text v-if="data[0].size" class="size hidden" depth="3"> 大小</n-text>
       </div>
       <n-card
         v-for="(item, index) in data.slice(
@@ -139,10 +139,10 @@
             </n-text>
           </div>
           <div v-else-if="type === 'dj'" class="artist">
-            <n-text class="ar" @dblclick.stop> 电台节目 </n-text>
+            <n-text class="ar" @dblclick.stop> 电台节目</n-text>
           </div>
           <div v-else class="artist">
-            <n-text class="ar" @dblclick.stop> {{ item.artists || "未知艺术家" }} </n-text>
+            <n-text class="ar" @dblclick.stop> {{ item.artists || "未知艺术家" }}</n-text>
           </div>
           <!-- 别名 -->
           <n-text v-if="item.alia" class="alia" depth="3">{{ item.alia }}</n-text>
@@ -202,7 +202,7 @@
         </n-text>
         <!-- 时长 -->
         <n-text v-if="item.duration" class="duration hidden" depth="3">{{ item.duration }}</n-text>
-        <n-text v-else class="duration"> -- </n-text>
+        <n-text v-else class="duration"> --</n-text>
         <!-- 大小 -->
         <n-text v-if="item.size" class="size hidden" depth="3">{{ item.size }}M</n-text>
       </n-card>
@@ -499,49 +499,60 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .song-list {
   width: 100%;
+
   .song-list-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 12px;
     padding: 0 16px;
+
     * {
       box-sizing: border-box;
     }
+
     .num {
       width: 30px;
       margin-right: 16px;
       text-align: center;
     }
+
     .info,
     .album {
       flex: 1;
     }
+
     .has-cover {
       margin-right: 66px;
     }
+
     .control {
       width: 40px;
     }
+
     .update {
       width: 80px;
       text-align: center;
       margin-right: auto;
     }
+
     .count {
       width: 120px;
       text-align: center;
     }
+
     .duration {
       width: 50px;
       text-align: center;
     }
+
     .size {
       width: 80px;
       padding-right: 10px;
       text-align: right;
     }
   }
+
   .songs {
     border-radius: 8px;
     margin-bottom: 12px;
@@ -550,6 +561,7 @@ onBeforeUnmount(() => {
       border-color 0.3s,
       box-shadow 0.3s;
     cursor: pointer;
+
     .cover {
       width: 50px;
       height: 50px;
@@ -560,6 +572,7 @@ onBeforeUnmount(() => {
       align-items: center;
       justify-content: center;
       overflow: hidden;
+
       .cover-img {
         width: 100%;
         height: 100%;
@@ -567,6 +580,7 @@ onBeforeUnmount(() => {
         transition:
           filter 0.3s,
           transform 0.3s;
+
         :deep(img) {
           width: 100%;
           opacity: 0;
@@ -574,6 +588,7 @@ onBeforeUnmount(() => {
         }
       }
     }
+
     .num {
       width: 30px;
       height: 30px;
@@ -584,42 +599,51 @@ onBeforeUnmount(() => {
       align-items: center;
       justify-content: center;
     }
+
     .info {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-right: 20px;
+
       .title {
         display: flex;
         align-items: center;
         flex-direction: row;
+
         .name {
           font-size: 16px;
           font-weight: bold;
           transition: color 0.3s;
           -webkit-line-clamp: 2;
+
           &:hover {
             color: var(--main-color);
           }
         }
+
         .n-tag {
           margin-left: 8px;
           height: 18px;
+
           &.cloud {
             padding: 0 10px;
             align-items: center;
             justify-content: center;
+
             :deep(.n-tag__icon) {
               margin-right: 0;
               width: 100%;
             }
           }
+
           &.mv {
             cursor: pointer;
           }
         }
       }
+
       .artist {
         margin-top: 2px;
         font-size: 13px;
@@ -628,104 +652,128 @@ onBeforeUnmount(() => {
         -webkit-line-clamp: 1;
         overflow: hidden;
         word-break: break-all;
+
         .ar {
           display: inline-flex;
           transition: opacity 0.3s;
           opacity: 0.6;
           cursor: pointer;
+
           &::after {
             content: "/";
             margin: 0 4px;
           }
+
           &:last-child {
             &::after {
               display: none;
             }
           }
+
           &:hover {
             opacity: 0.8;
           }
         }
       }
+
       .alia {
         margin-top: 2px;
         font-size: 12px;
         opacity: 0.8;
       }
     }
+
     .album {
       flex: 1;
       padding-right: 20px;
       transition: color 0.3s;
       -webkit-line-clamp: 2;
+
       &:hover {
         color: var(--main-color);
       }
     }
+
     .action {
       width: 40px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+
       .favorite {
         padding-top: 1px;
         transition: transform 0.3s;
         cursor: pointer;
+
         &:hover {
           transform: scale(1.15);
         }
+
         &:active {
           transform: scale(1);
         }
       }
+
       .more {
         display: none;
       }
     }
+
     .update {
       width: 80px;
       text-align: center;
     }
+
     .count {
       width: 120px;
       text-align: center;
     }
+
     .duration {
       width: 50px;
       text-align: center;
     }
+
     .size {
       width: 80px;
       text-align: right;
     }
+
     &.play {
       background-color: var(--main-second-color);
       border-color: var(--main-color);
+
       a,
       span,
       .num {
         color: var(--main-color) !important;
       }
+
       .artist {
         .ar {
           opacity: 0.8;
           transition: opacity 0.3s;
+
           &:hover {
             opacity: 1;
           }
         }
       }
+
       .album {
         opacity: 0.8;
         transition: opacity 0.3s;
+
         &:hover {
           opacity: 1;
         }
       }
     }
+
     &:last-child {
       margin-bottom: 0;
     }
+
     &:hover {
       border-color: var(--main-color);
       box-shadow:
@@ -733,10 +781,12 @@ onBeforeUnmount(() => {
         0 3px 6px 0 var(--main-boxshadow-color),
         0 5px 12px 4px var(--main-boxshadow-hover-color);
     }
+
     &:active {
       transform: scale(0.995);
     }
   }
+
   .scroll-to-song {
     position: absolute;
     width: 44px;
@@ -749,10 +799,12 @@ onBeforeUnmount(() => {
       transform 0.3s,
       opacity 0.3s;
     cursor: pointer;
+
     &:active {
       transform: scale(0.9);
     }
   }
+
   @media (max-width: 700px) {
     .song-list-header,
     .songs {
@@ -767,19 +819,23 @@ onBeforeUnmount(() => {
         height: 28px;
         min-width: 28px;
       }
+
       .info {
         .title {
           .name {
             font-size: 15px;
           }
         }
+
         .artist {
           font-size: 12px;
         }
       }
+
       .action {
         width: 60px;
         justify-content: flex-end;
+
         .more {
           display: inline-block;
           margin-left: 12px;
@@ -788,11 +844,13 @@ onBeforeUnmount(() => {
     }
   }
 }
+
 .loading {
   :deep(.n-skeleton) {
     &:nth-of-type(1) {
       margin-top: 0;
     }
+
     height: 80px;
     margin-top: 12px;
     border-radius: 8px;

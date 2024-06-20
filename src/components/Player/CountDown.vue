@@ -85,6 +85,7 @@ const pointOpacity = (index) => {
   flex-direction: row-reverse;
   align-items: center;
   animation: breathe 4s ease-in-out infinite;
+
   .point {
     width: 28px;
     height: 28px;
@@ -101,6 +102,7 @@ const pointOpacity = (index) => {
     }
   }
 }
+
 @keyframes breathe {
   0% {
     transform: scale(0.95);

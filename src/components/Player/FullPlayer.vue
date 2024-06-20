@@ -363,6 +363,7 @@ onUnmounted(() => {
     height: 100%;
     overflow: hidden;
     z-index: -1;
+
     &::after {
       content: "";
       position: absolute;
@@ -373,38 +374,46 @@ onUnmounted(() => {
       background-color: #00000060;
       backdrop-filter: blur(20px);
     }
+
     &.blur {
       display: flex;
       align-items: center;
       justify-content: center;
+
       .overlay-img {
         width: 150%;
         height: 150%;
         filter: blur(80px) contrast(1.2);
       }
     }
+
     &.animation {
       transform: scale(1.3);
+
       .overlay-img {
         position: absolute;
         width: 50%;
         height: 50%;
         filter: blur(80px) contrast(1.75);
+
         &:nth-of-type(1) {
           top: 0;
           left: 0;
           animation: coverRotate 62s infinite linear;
         }
+
         &:nth-of-type(2) {
           left: 0;
           bottom: 0;
           animation: coverRotate 55s infinite linear reverse;
         }
+
         &:nth-of-type(3) {
           bottom: 50%;
           right: 0;
           animation: coverRotate 58s infinite linear reverse;
         }
+
         &:nth-of-type(4) {
           bottom: 0;
           right: 0;
@@ -412,15 +421,18 @@ onUnmounted(() => {
         }
       }
     }
+
     &.gradient {
       background: var(--cover-bg);
     }
+
     &.none {
       &::after {
         display: none;
       }
     }
   }
+
   // 按钮
   .menu {
     position: absolute;
@@ -435,6 +447,7 @@ onUnmounted(() => {
     z-index: 2;
     box-sizing: border-box;
     -webkit-app-region: no-drag;
+
     .left,
     .right {
       display: flex;
@@ -442,12 +455,14 @@ onUnmounted(() => {
       align-items: center;
       justify-content: flex-end;
     }
+
     .center {
       width: 100%;
       height: 100%;
       flex: 1;
       -webkit-app-region: drag;
     }
+
     .n-icon {
       margin-left: 12px;
       width: 40px;
@@ -463,19 +478,24 @@ onUnmounted(() => {
         transform 0.3s,
         background-color 0.3s;
       cursor: pointer;
+
       &:hover {
         background-color: #ffffff20;
         transform: scale(1.05);
         opacity: 1;
       }
+
       &:active {
         transform: scale(1);
       }
     }
+
     .left {
       justify-content: flex-start;
+
       .n-icon {
         margin-left: 0;
+
         &.lrc-open {
           &.open {
             opacity: 0.8;
@@ -484,6 +504,7 @@ onUnmounted(() => {
       }
     }
   }
+
   .main-player {
     display: flex;
     flex-direction: row;
@@ -500,115 +521,139 @@ onUnmounted(() => {
       transition:
         transform 0.3s,
         opacity 0.3s;
+
       .data {
         width: 70%;
         max-width: 55vh;
         margin-top: 24px;
         padding: 0 2px;
         box-sizing: border-box;
+
         .desc {
           display: flex;
           flex-direction: column;
+
           .title {
             display: flex;
             align-items: center;
             margin-left: 4px;
+
             .name {
               font-size: 26px;
               font-weight: bold;
               color: var(--cover-main-color);
               -webkit-line-clamp: 2;
             }
+
             .n-tag {
               margin-left: 12px;
               cursor: pointer;
             }
           }
+
           .alia {
             margin: 6px 0 6px 2px;
             opacity: 0.6;
             font-size: 18px;
           }
+
           .artist {
             margin-top: 2px;
             display: flex;
             align-items: center;
+
             .n-icon {
               margin-right: 4px;
               color: var(--cover-main-color);
             }
+
             .all-ar {
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
               overflow: hidden;
               word-break: break-all;
+
               .ar {
                 font-size: 16px;
                 opacity: 0.7;
                 display: inline-flex;
                 transition: opacity 0.3s;
                 cursor: pointer;
+
                 &::after {
                   content: "/";
                   margin: 0 4px;
                   transition: none;
                 }
+
                 &:last-child {
                   &::after {
                     display: none;
                   }
                 }
+
                 &:hover {
                   opacity: 1;
                 }
               }
             }
           }
+
           .album {
             margin-top: 2px;
             font-size: 16px;
             display: flex;
             align-items: center;
+
             .n-icon {
               margin-right: 4px;
               color: var(--cover-main-color);
             }
+
             .al {
               opacity: 0.7;
               transition: opacity 0.3s;
               // -webkit-line-clamp: 2;
               cursor: pointer;
+
               &:hover {
                 opacity: 1;
               }
             }
           }
+
           .dj {
             margin-top: 12px;
             font-size: 16px;
             display: flex;
             align-items: center;
+
             .n-icon {
               margin-right: 4px;
               color: var(--cover-main-color);
             }
+
             .dj-name {
               opacity: 0.7;
               transition: opacity 0.3s;
               -webkit-line-clamp: 2;
               cursor: pointer;
+
               &:hover {
                 opacity: 1;
               }
             }
           }
         }
+
         &.record {
           width: 100%;
           margin-top: 20px;
+
           .desc {
             align-items: center;
+
             .title {
               .name {
                 text-align: center;
@@ -617,24 +662,30 @@ onUnmounted(() => {
           }
         }
       }
+
       &.no-lrc {
         transform: translateX(50%);
       }
     }
+
     .right {
       width: 50%;
       transition: width 0.3s;
+
       .data {
         padding: 0 80px 0 24px;
         margin-bottom: 26px;
+
         .name {
           display: flex;
           flex-direction: column;
           font-size: 30px;
           font-weight: bold;
+
           .name-text {
             -webkit-line-clamp: 2;
           }
+
           .name-alias {
             margin-top: 6px;
             font-size: 18px;
@@ -642,54 +693,65 @@ onUnmounted(() => {
             opacity: 0.6;
           }
         }
+
         .other {
           display: flex;
           flex-direction: column;
           margin-top: 8px;
           font-size: 16px;
+
           .n-icon {
             margin-right: 4px;
             color: var(--cover-main-color);
           }
+
           .artist {
             display: flex;
             align-items: center;
             margin-right: 12px;
+
             .all-ar {
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
               overflow: hidden;
               word-break: break-all;
+
               .ar {
                 opacity: 0.7;
                 display: inline-flex;
                 transition: opacity 0.3s;
                 cursor: pointer;
+
                 &::after {
                   content: "/";
                   margin: 0 4px;
                   transition: none;
                 }
+
                 &:last-child {
                   &::after {
                     display: none;
                   }
                 }
+
                 &:hover {
                   opacity: 1;
                 }
               }
             }
           }
+
           .album {
             display: flex;
             align-items: center;
             margin-top: 4px;
+
             .al {
               opacity: 0.7;
               transition: opacity 0.3s;
               cursor: pointer;
+
               &:hover {
                 opacity: 1;
               }
@@ -697,16 +759,19 @@ onUnmounted(() => {
           }
         }
       }
+
       &.pure {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .data {
           padding: 0 80px;
           display: flex;
           flex-direction: column;
           align-items: center;
+
           .other,
           .name {
             align-items: center;
@@ -715,6 +780,7 @@ onUnmounted(() => {
       }
     }
   }
+
   // 全局
   span {
     display: -webkit-box;
@@ -723,6 +789,7 @@ onUnmounted(() => {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
+
   @media (max-width: 700px) {
     .menu {
       .hidden {
@@ -732,25 +799,32 @@ onUnmounted(() => {
     .main-player {
       .content {
         width: 100%;
+
         .data {
           display: block !important;
+
           &.record {
             margin-top: 0;
           }
         }
+
         &.no-lrc {
           transform: translateX(0);
         }
       }
+
       .right {
         display: none;
+
         .data {
           .name {
             font-size: 24px;
+
             .name-alias {
               font-size: 16px;
             }
           }
+
           .other {
             font-size: 14px;
           }
@@ -759,11 +833,13 @@ onUnmounted(() => {
     }
   }
 }
+
 // 局外样式
 .title-tip {
   width: 200px;
   padding: 12px 20px;
   border-radius: 12px;
+
   .n-text {
     display: initial;
   }

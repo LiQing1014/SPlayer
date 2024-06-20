@@ -147,6 +147,7 @@ onBeforeUnmount(() => {
     hsla(0, 0%, 100%, 0.6) 90%,
     hsla(0, 0%, 100%, 0)
   );
+
   .spectrum-line {
     mask: linear-gradient(
       90deg,

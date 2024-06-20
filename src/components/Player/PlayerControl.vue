@@ -334,6 +334,7 @@ const jumpToComment = () => {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   cursor: pointer;
+
   .left,
   .right {
     opacity: 0;
@@ -344,6 +345,7 @@ const jumpToComment = () => {
     justify-content: flex-start;
     padding: 0 30px;
     transition: opacity 0.3s;
+
     .n-icon {
       padding: 8px;
       border-radius: 8px;
@@ -356,32 +358,39 @@ const jumpToComment = () => {
         background-color 0.3s,
         transform 0.3s;
       cursor: pointer;
+
       &:hover {
         transform: scale(1.1);
         background-color: var(--cover-second-color);
       }
+
       &:active {
         transform: scale(1);
       }
     }
   }
+
   .right {
     justify-content: flex-end;
+
     .n-icon {
       margin-left: 12px;
       margin-right: 0;
     }
   }
+
   .center {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .btn {
       display: flex;
       flex-direction: row;
       align-items: center;
+
       .play-control {
         --n-width: 44px;
         --n-height: 44px;
@@ -390,16 +399,20 @@ const jumpToComment = () => {
         transition:
           background-color 0.3s,
           transform 0.3s;
+
         .n-icon {
           transition: opacity 0.1s ease-in-out;
         }
+
         &:hover {
           transform: scale(1.1);
         }
+
         &:active {
           transform: scale(1);
         }
       }
+
       .play-prev,
       .play-next {
         padding: 6px;
@@ -409,15 +422,18 @@ const jumpToComment = () => {
           background-color 0.3s,
           transform 0.3s;
         cursor: pointer;
+
         &:hover {
           transform: scale(1.1);
           background-color: var(--cover-second-color);
         }
+
         &:active {
           transform: scale(1);
         }
       }
     }
+
     .slider {
       display: flex;
       flex-direction: row;
@@ -426,14 +442,18 @@ const jumpToComment = () => {
       max-width: 480px;
       font-size: 12px;
       cursor: pointer;
+
       .vue-slider {
         margin: 6px 8px;
+
         :deep(.vue-slider-rail) {
           background-color: var(--cover-second-color);
+
           .vue-slider-process {
             background-color: var(--cover-main-color);
             // transition: none !important;
           }
+
           .vue-slider-dot {
             width: 10px !important;
             height: 10px !important;
@@ -442,22 +462,26 @@ const jumpToComment = () => {
               background-color: var(--cover-main-color);
             }
           }
+
           .vue-slider-dot-handle-focus {
             box-shadow: 0px 0px 1px 2px var(--cover-second-color);
           }
         }
       }
+
       span {
         opacity: 0.6;
       }
     }
   }
+
   &:hover {
     .left,
     .right {
       opacity: 1;
     }
   }
+
   @media (max-width: 700px) {
     display: flex;
     align-items: center;
@@ -466,6 +490,7 @@ const jumpToComment = () => {
     .left,
     .right {
       opacity: 1;
+
       .hidden {
         display: none;
       }
@@ -475,6 +500,7 @@ const jumpToComment = () => {
     }
   }
 }
+
 // 音量控制
 .slider-content {
   padding: 10px 0px;
@@ -484,11 +510,13 @@ const jumpToComment = () => {
   flex-direction: column;
   align-items: center;
   background-color: var(--cover-second-color);
+
   .n-slider {
     --n-fill-color: var(--cover-main-color);
     --n-fill-color-hover: var(--cover-main-color);
     --n-handle-color: var(--cover-main-color);
   }
+
   .slider-num {
     margin-top: 4px;
     font-size: 12px;

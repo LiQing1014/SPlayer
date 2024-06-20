@@ -7,6 +7,7 @@ import { getSongPlayTime } from "@/utils/timeTools";
 import { getCoverGradient } from "@/utils/cover-color";
 import { isLogin } from "@/utils/auth";
 import { parseLyric, parseLocalLrc } from "@/utils/parseLyric";
+import axios from "axios";
 
 // 全局播放器
 let player;
@@ -87,6 +88,8 @@ export const initPlayer = async (playNow = false) => {
           } else {
             $message.error("该歌曲暂无音源，跳至下一首");
             changePlayIndex("next", true);
+            // console.log(playSongData, "playerSongData");
+            otherMusic();
           }
         }
       }
@@ -853,3 +856,17 @@ const setAllInterval = () => {
   // justSeekInterval = setInterval(() => justSetSeek(), 17);
   justSeekInterval = requestAnimationFrame(justSetSeek);
 };
+
+function otherMusic(songName) {
+  let api = "https://xiaoapi.cn/API/yy_sq.php";
+
+  return axios({
+    method: "GET",
+    url: api,
+    params: {
+      msg: songName,
+      type: "json",
+      n: 1,
+    },
+  });
+}

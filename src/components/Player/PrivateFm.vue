@@ -186,6 +186,7 @@ onBeforeMount(async () => {
   padding: 20px;
   z-index: 0;
   box-sizing: border-box;
+
   .overlay {
     position: absolute;
     top: 0;
@@ -196,6 +197,7 @@ onBeforeMount(async () => {
     background-size: 150% 150%;
     background-position: center;
     z-index: -1;
+
     &::after {
       content: "";
       width: 100%;
@@ -210,6 +212,7 @@ onBeforeMount(async () => {
       border-radius: 16px;
     }
   }
+
   .content {
     position: relative;
     display: flex;
@@ -229,6 +232,7 @@ onBeforeMount(async () => {
       width: auto;
       aspect-ratio: 1 / 1;
       margin-right: 20px;
+
       .cover-img {
         width: 100%;
         height: 100%;
@@ -237,6 +241,7 @@ onBeforeMount(async () => {
         z-index: 1;
         box-shadow: 0 0 10px 6px #00000008;
         transition: opacity 0.1s ease-in-out;
+
         :deep(img) {
           width: 100%;
           height: 100%;
@@ -245,11 +250,13 @@ onBeforeMount(async () => {
         }
       }
     }
+
     .data {
       display: flex;
       flex-direction: column;
       width: 100%;
       color: var(--color);
+
       .info {
         .name {
           display: -webkit-box;
@@ -260,51 +267,61 @@ onBeforeMount(async () => {
           font-size: 24px;
           font-weight: bold;
         }
+
         .artist {
           margin-top: 4px;
           display: flex;
           align-items: center;
+
           .n-icon {
             margin-right: 4px;
             color: var(--color);
           }
+
           .all-ar {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 1;
             overflow: hidden;
             word-break: break-all;
+
             .ar {
               font-size: 16px;
               opacity: 0.7;
               display: inline-flex;
               transition: opacity 0.3s;
               cursor: pointer;
+
               &::after {
                 content: "/";
                 margin: 0 4px;
                 transition: none;
               }
+
               &:last-child {
                 &::after {
                   display: none;
                 }
               }
+
               &:hover {
                 opacity: 1;
               }
             }
           }
         }
+
         .album {
           margin-top: 4px;
           font-size: 16px;
           display: flex;
           align-items: center;
+
           .n-icon {
             margin-right: 4px;
             color: var(--color);
           }
+
           .al {
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -314,12 +331,14 @@ onBeforeMount(async () => {
             opacity: 0.7;
             transition: opacity 0.3s;
             cursor: pointer;
+
             &:hover {
               opacity: 1;
             }
           }
         }
       }
+
       .control {
         position: relative;
         display: flex;
@@ -328,6 +347,7 @@ onBeforeMount(async () => {
         height: 46px;
         margin-top: auto;
         color: var(--color);
+
         .play-control {
           --n-width: 46px;
           --n-height: 46px;
@@ -336,16 +356,20 @@ onBeforeMount(async () => {
           transition:
             background-color 0.3s,
             transform 0.3s;
+
           .n-icon {
             transition: opacity 0.1s ease-in-out;
           }
+
           &:hover {
             transform: scale(1.1);
           }
+
           &:active {
             transform: scale(1);
           }
         }
+
         .play-other {
           margin-right: 12px;
           padding: 6px;
@@ -354,14 +378,17 @@ onBeforeMount(async () => {
             background-color 0.3s,
             transform 0.3s;
           cursor: pointer;
+
           &:hover {
             transform: scale(1.1);
             background-color: #efefef29;
           }
+
           &:active {
             transform: scale(1);
           }
         }
+
         .radio {
           position: absolute;
           right: 0;
@@ -375,14 +402,17 @@ onBeforeMount(async () => {
           font-weight: bold;
           pointer-events: none;
           z-index: -1;
+
           .icon {
             display: flex;
             align-items: center;
+
             .n-icon {
               margin-right: 6px;
               transform: translateY(-1px);
             }
           }
+
           .tip {
             font-size: 12px;
             font-weight: normal;
@@ -391,6 +421,7 @@ onBeforeMount(async () => {
         }
       }
     }
+
     @media (max-width: 1300px) {
       .cover {
         position: absolute;

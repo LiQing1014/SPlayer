@@ -300,32 +300,40 @@ onMounted(() => {
     hsla(0, 0%, 100%, 0.6) 85%,
     hsla(0, 0%, 100%, 0)
   );
+
   :deep(.n-scrollbar-rail) {
     display: none;
   }
+
   :deep(.n-scrollbar-content) {
     padding-left: 10px;
     padding-right: 80px;
   }
+
   .fade-enter-active {
     transition-delay: 0.3s;
   }
+
   .lyric-all {
     width: 100%;
     height: 100%;
   }
+
   .placeholder {
     width: 100%;
+
     &:first-child {
       height: 260px;
       display: flex;
       align-items: flex-end;
     }
+
     &:last-child {
       height: 0;
       padding-top: 100%;
     }
   }
+
   .lrc-line {
     position: relative;
     display: flex;
@@ -338,6 +346,7 @@ onMounted(() => {
       filter 0.35s,
       opacity 0.35s,
       transform 0.35s ease-in-out;
+
     .lrc-content {
       font-size: 46px;
       word-wrap: break-word;
@@ -345,9 +354,11 @@ onMounted(() => {
       .lrc-text {
         position: relative;
         display: inline-block;
+
         .word {
           opacity: 0.3;
         }
+
         .filler {
           opacity: 0;
           position: absolute;
@@ -371,39 +382,47 @@ onMounted(() => {
           -webkit-mask-repeat: no-repeat;
           transition: all 0.35s;
         }
+
         &.end-with-space {
           margin-right: 12px;
+
           &:last-child {
             margin-right: 0;
           }
         }
       }
     }
+
     .lrc-fy {
       margin-top: 8px;
       font-size: 30px;
       opacity: 0.6;
       transition: opacity 0.35s;
     }
+
     .lrc-roma {
       margin-top: 4px;
       font-size: 20px;
       opacity: 0.6;
       transition: opacity 0.35s;
     }
+
     &.islrc {
       opacity: 0.3;
     }
+
     &.isyrc {
       .lrc-content {
         display: flex;
         flex-wrap: wrap;
       }
+
       .lrc-fy,
       .lrc-roma {
         opacity: 0.3;
       }
     }
+
     &.on {
       opacity: 1;
       transform: scale(1);
@@ -415,20 +434,24 @@ onMounted(() => {
           transition-property: -webkit-mask-position-x, transform, opacity;
           transition-timing-function: linear, ease, ease;
         }
+
         &.end-with-space {
           margin-right: 12px;
         }
+
         // &.lrc-long {
         //   .filler {
         //     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.6));
         //   }
         // }
       }
+
       .lrc-fy,
       .lrc-roma {
         opacity: 0.6;
       }
     }
+
     @media (min-width: 768px) {
       &::before {
         content: "";
@@ -451,6 +474,7 @@ onMounted(() => {
       &:hover {
         opacity: 1;
         filter: blur(0) !important;
+
         &::before {
           transform: scale(1);
           opacity: 1;
@@ -463,57 +487,71 @@ onMounted(() => {
       }
     }
   }
+
   &.lyric-center,
   &.pure {
     span {
       text-align: center !important;
     }
+
     .placeholder {
       justify-content: center !important;
     }
+
     .lrc-line {
       transform-origin: center !important;
       align-items: center !important;
+
       .lrc-content {
         justify-content: center !important;
       }
     }
   }
+
   &.lyric-right {
     span {
       text-align: right;
     }
+
     .placeholder {
       justify-content: flex-end;
     }
+
     .lrc-line {
       transform-origin: right;
       align-items: flex-end;
+
       .lrc-content {
         justify-content: flex-end;
       }
     }
   }
+
   &.pure {
     :deep(.n-scrollbar-content) {
       padding: 0 80px;
     }
   }
+
   &.record,
   &.pure {
     height: calc(100vh - 300px);
     margin-bottom: 40px;
+
     .lrc-line {
       margin-bottom: -12px;
       transform: scale(0.76);
+
       &.on {
         transform: scale(0.9);
       }
     }
   }
+
   &.custom-lrc {
     font-family: var(--main-font-family-lyric) !important;
   }
+
   @media (max-width: 700px) {
     :deep(.n-scrollbar-content) {
       padding: 0 20px !important;
@@ -522,9 +560,11 @@ onMounted(() => {
       .lrc-content {
         font-size: 6.5vw !important;
       }
+
       .lrc-fy {
         font-size: 4.5vw !important;
       }
+
       .lrc-roma {
         font-size: 4vw !important;
       }
