@@ -1,12 +1,12 @@
 {
   "name": "splayer",
   "version": "2.1.0",
-  "description": "A minimalist music player",
+  "description": "一个音乐播放器",
   "main": "./out/main/index.js",
-  "author": "imsyy",
-  "home": "https://imsyy.top",
-  "github": "https://github.com/imsyy/SPlayer",
-  "repository": "github:imsyy/SPlayer",
+  "author": "折扇",
+  "home": "https://www.liqing.online",
+  "github": "https://github.com/LiQing1014/SPlayer",
+  "repository": "github:LiQing1014/SPlayer",
   "license": "AGPL-3.0",
   "license-file": "LICENSE",
   "engines": {
@@ -16,7 +16,6 @@
   },
   "type": "module",
   "scripts": {
-    "build:web": "npm run build",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
     "start": "electron-vite preview",
@@ -26,6 +25,23 @@
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "npm run build && electron-builder --mac --config",
     "build:linux": "npm run build && electron-builder --linux --config"
+  },
+  "build": {
+    "appId": "com.zheshan.splayer",
+    "win": {
+      "icon": "./logo.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+   "nsis": {
+     "oneClick": false,
+     "perMachine": true,
+     "allowToChangeInstallationDirectory": true
+   }
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
