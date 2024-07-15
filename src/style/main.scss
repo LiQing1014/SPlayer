@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'zheshanFont';
+  src: url('https://testingcf.jsdelivr.net/gh/cenguigui/cdn@master/fonts/fonts.woff2') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --main-font-family: "HarmonyOS Sans", "HarmonyOS_Regular", system-ui, -apple-system, sans-serif;
+  //--main-font-family: "HarmonyOS Sans", "HarmonyOS_Regular", system-ui, -apple-system, sans-serif;
+  --main-font-family: "zheshanFont", system-ui, -apple-system, sans-serif;
 }
 
 * {
